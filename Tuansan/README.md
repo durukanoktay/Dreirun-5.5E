@@ -2,7 +2,7 @@
 **Kılıçay Yarımadası Merkezli Özerk Beylik**  
 *Şanlı İmparatorluk’a bağlı koloni devleti*
 
-![Tuan-şan Krallığı](beylik%20ve%20armalar/Tuan_san_kralligi.jpg)
+![Tuan-şan Krallığı](Armalar%20ve%20birlikler/Tuan_san_kralligi.jpg)
 
 ![Tuan-şan Krallığı Coğrafyası](East_tuan_san_kingdom.jpg)
 
@@ -150,10 +150,10 @@ IV. Tuan’ın henüz net bir veliaht belirlememiş olması ve küçük çocukla
 *Bu belge Tuanşan Beyliği’nin resmî tarihçesi olarak hazırlanmıştır.  
 Son güncelleme: 1326 (İşgal Sonrası)*
 
-![Karay Adası](beylik%20ve%20armalar/karay_adasi.jpg)
-![Hak Adasıı](beylik%20ve%20armalar/Hak_adalari.jpg)
-![Bergamot Adası](beylik%20ve%20armalar/bergamot_adasi.jpg)
-![Kül Adası](beylik%20ve%20armalar/kul_adasi.jpg)
-![Şehzade Adası](beylik%20ve%20armalar/prens_adasi.jpg)
+![Karay Adası](Armalar%20ve%20birlikler/karay_adasi.jpg)
+![Hak Adasıı](Armalar%20ve%20birlikler/Hak_adalari.jpg)
+![Bergamot Adası](Armalar%20ve%20birlikler/bergamot_adasi.jpg)
+![Kül Adası](Armalar%20ve%20birlikler/kul_adasi.jpg)
+![Şehzade Adası](Armalar%20ve%20birlikler/prens_adasi.jpg)
 
 

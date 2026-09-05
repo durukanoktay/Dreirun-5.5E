@@ -25,33 +25,39 @@
 - **Üstte:** Gümüş bir hilal ve altında üç altın yıldız (Şan soyuna bağlılığı simgeler).
 - **Kenar:** Kırmızı ve siyah dalgalı bordür (deniz ve kan).
 - **Motto (Common):** “Ash and Steel” (Kül ve Çelik)
-![Karay Adası](karay_adasi.png)
+
+![Karay Adası](karay_adasi.jpg)
 
 ### Kül Adası Arması
 - **Kalkan:** Koyu gri zemin, ortada kırmızı bir yanardağ (kül ve ateş), etrafında gümüş dalgalar.
 - **Üstte:** Siyah bir gemi silueti.
 - **Anlam:** Keşif gemisinin oturduğu ada ve volkanik topraklar.
+
 ![Kül Adası](kul_adasi.jpg)
 
 ### Hak Adaları Arması
 - **Kalkan:** Yeşil zemin üzerinde gümüş bir kertenkele (lizardfolk) kafası, kafanın üstünde kırık bir mızrak.
 - **Kenar:** Kan kırmızısı bordür.
 - **Anlam:** Fetih ve yok edilen yerli halkın hatırası (zafer olarak gösterilir).
-![Hak Adasıı](Hak_adalari.jpg)
+
+![Hak Adasıı](hak_adalari.jpg)
 
 ### Şehzade Adaları Arması
 - **Kalkan:** Mavi zemin, üç altın ada silueti, üstlerinde gümüş bir taç.
 - **Anlam:** Prenslere (şehzadelere) ait adalar ve deniz ticareti.
+
 ![Şehzade Adası](prens_adasi.jpg)
 
 ### Bergamot Adası Arması
 - **Kalkan:** Altın zemin, yeşil bir bergamot ağacı, ağacın altında siyah bir boğa.
 - **Anlam:** Bereket ve tarım.
+
 ![Bergamot Adası](bergamot_adasi.jpg)
 
 ### Karay Adası Arması
 - **Kalkan:** Koyu mavi zemin, tek bir gümüş kayalık ada, ada üzerinde siyah bir kuzgun.
 - **Anlam:** İzolasyon, gözetleme ve sadakat.
+
 ![Karay Adası](karay_adasi.jpg)
 
 ### Sami Bataklığı (Tuan-djer) Arması
