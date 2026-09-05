@@ -26,7 +26,7 @@
 - **Kenar:** Kırmızı ve siyah dalgalı bordür (deniz ve kan).
 - **Motto (Common):** “Ash and Steel” (Kül ve Çelik)
 
-![Karay Adası](karay_adasi.jpg)
+![Tuanşan Arması](tuan_san_kralligi.jpg)
 
 ### Kül Adası Arması
 - **Kalkan:** Koyu gri zemin, ortada kırmızı bir yanardağ (kül ve ateş), etrafında gümüş dalgalar.
