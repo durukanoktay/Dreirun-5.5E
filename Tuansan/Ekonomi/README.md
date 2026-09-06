@@ -1,6 +1,10 @@
 # Tuanşan Beyliği Ekonomisi ve Geçim Düzeni
 **1326 (İşgal Sonrası)**
 
+## Sikekler
+
+![sikkeler](sikkeler.jpg)
+
 ## 1. Genel Ekonomik Çerçeve
 
 Tuanşan, okyanus kıyısında kurulmuş genç bir koloni beyliğidir. Ekonomisi tarım, hayvancılık, balıkçılık, ada ürünleri ve Akçakale çevresindeki bronz madenciliğine dayanır. Yarımada ve adalar arasında iklim ile toprak niteliği belirgin biçimde değiştiği için, bölgeler arası deniz taşımacılığı günlük hayatın temel parçasıdır.
