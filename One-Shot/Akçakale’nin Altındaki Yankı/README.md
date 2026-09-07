@@ -65,6 +65,8 @@ Akçakale’nin gnome başmühendisi. Mağaradaki ışık düzeni, işlenmiş y�
 
 Akşan Cücelerinin başı ve Akçakale’deki kazı işlerinin maden ustasıdır. Resmî yönetimdeki Usta Thorin Aktaş ile madenin geleceği konusunda açıkça çatışmaz; ancak yeraltı vardiyalarında gerçek söz sahibi Grimone’dur.
 
+![Grimone Akşan](grimone_Aksan.jpg)
+
 - **İnancı:** Grimlockları, drowlara benzettiği, “temizlenmesi gereken” bir ırk olarak görür.
 - **İsteği:** Geçidin bombalanması, mağaranın yakılması ve hiçbir yaratığın yüzeye çıkmaması.
 - **Rol yapma notu:** Kaba ve açık sözlüdür; önyargısını güvenlik gerekçesiyle meşrulaştırır.
@@ -75,6 +77,8 @@ Grimone’un yaklaşımı haklı çıkmamalıdır: Grimlocklar tehlikelidir, fak
 ### Ulthar-Vesh, “Yüce Düşünür”
 
 Mağaranın derinlerinde yerleşmiş bir Mind Flayer. Grimlockları zihin baskısı, korku ve yiyecek aracılığıyla kendine bağlamıştır. Akçakale’nin titreşimlerini inceleyerek yüzeye açılacak güvenli yollar arar.
+
+![Ulthar-Vesh](Ulthar_Vesh.jpg)
 
 - **Hedefi:** Madenin işçi düzenini ve Tuanşan’daki karar vericileri gözlemlemek; sonra sessizce nüfuz etmek.
 - **Korkusu:** Şehrazad’ın geçmişte karşılaştığı türden bir tehdidi tanıması.
@@ -241,11 +245,21 @@ Karakterler Tikkit’in kanıtlarını halka, Bey’e veya meclise ulaştırır.
 
 ![Ulthar-Vesh'in Odası](mind_flayer_room.jpg)
 
-- `[Eklenecek]` Akçakale madenlerinin üst katman planı
-- `[Eklenecek]` Gizli geçit ve Yankı Köprüsü savaş haritası
-- `[Eklenecek]` Düşünce Kuyusu final savaş haritası
-- `[Eklenecek]` Gece Camı, Sessiz Kök ve Yıldırım Taşı görselleri
-- `[Eklenecek]` Şehrazad Veyran, Tikkit Alevdüğüm, Grimone Akşan ve Ulthar-Vesh portreleri
+### Ulthar-Vesh'in Sunağı
+
+![Ulthar-Vesh'in Sunağı](ultars_pit.jpg)
+
+### Gizli Geçit Ve Yankı Köprüsü Savaş Haritaları
+
+![Gizli geçit ve Yankı Köprüsü savaş haritası](bridge_battlemap.jpg)
+
+### Akçakale madenlerinin üst katman planı
+
+![Akçakale madenlerinin üst katman planı](akcakale_madenleri.jpg)
+
+### Gece Camı, Sessiz Kök ve Yıldırım Taşı
+
+![Gece Camı, Sessiz Kök ve Yıldırım Taşı](materials.jpg)
 
 
 
