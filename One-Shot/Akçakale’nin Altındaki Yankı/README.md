@@ -70,7 +70,7 @@ Akşan Cücelerinin başı ve Akçakale’deki kazı işlerinin maden ustasıdı
 - **İnancı:** Grimlockları, drowlara benzettiği, “temizlenmesi gereken” bir ırk olarak görür.
 - **İsteği:** Geçidin bombalanması, mağaranın yakılması ve hiçbir yaratığın yüzeye çıkmaması.
 - **Rol yapma notu:** Kaba ve açık sözlüdür; önyargısını güvenlik gerekçesiyle meşrulaştırır.
-- **Sunduğu destek:** Bir patlatma düzeneği, halat, kazma ve bir cüce muhafız.
+- **Sunduğu destek:** Bir patlatma düzeneği, halat, kazma ve haritalama ekipmanları.
 
 Grimone’un yaklaşımı haklı çıkmamalıdır: Grimlocklar tehlikelidir, fakat mağaradaki şiddetin kaynağı onların varlığı değil Ulthar-Vesh’in köleleştirmesidir.
 
@@ -80,9 +80,9 @@ Mağaranın derinlerinde yerleşmiş bir Mind Flayer. Grimlockları zihin baskı
 
 ![Ulthar-Vesh](Ulthar_Vesh.jpg)
 
-- **Hedefi:** Madenin işçi düzenini ve Tuanşan’daki karar vericileri gözlemlemek; sonra sessizce nüfuz etmek.
-- **Korkusu:** Şehrazad’ın geçmişte karşılaştığı türden bir tehdidi tanıması.
-- **Kaçış planı:** Son ana kadar savaşmaz; eşyaları alıp arka tünelden kaçmak ister.
+- **Hedefi:** Madenin işçi düzenini ve Tuanşan’daki karar vericileri gözlemlemek; sonra sessizce nüfuz etmek ve madenlerdeki bu eski medeniyet gibi yeni gelen halkı da köleleştirmek.
+- **Korkusu:** Araştırmalrını Kaybetmek.
+- **Kaçış planı:** Son ana kadar savaşmaz; kazanamayacağını anlarsa eşyaları alıp arka tünelden kaçmak ister.
 
 ---
 
@@ -177,7 +177,6 @@ Ulthar-Vesh ölürse cesedi değerli bir kanıttır. Cesedi Şehrazad’a eksiks
 | **Yıldırım Taşı** | Kristal enerjisi depolayan taş. Büyülü eşya yapımında malzeme; yaklaşık 6–10 altın. |
 | **Kâhinin Kemik Haritası** | Yeraltı geçitleri ve üç gizli yüzey çıkışını gösteren, titreşimle okunabilir harita. |
 | **Gece Camı Odağı** | Ulthar-Vesh’in kaçışına yardım eden bilinmeyen aygıt. Zihinsel/illüzyon büyüsü araştırmaları için değerli kanıt. |
-| **Eski keşif mührü** | Şehrazad’ın yirmi yıl önce kaybettiği ekibe ait nişan. Paradan çok siyasî ağırlığı vardır. |
 
 ---
 
