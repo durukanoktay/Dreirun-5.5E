@@ -1,6 +1,6 @@
 # Akçakale’nin Altındaki Yankı
 
-![Akçakale’nin Altındaki Yankı](Akcakalenin_altindaki_yanki.jpg)
+![Akçakale’nin Altındaki Yankı](Akcakalenin_altindaki_yanki.png)
 
 ## Hızlı başlangıç
 
