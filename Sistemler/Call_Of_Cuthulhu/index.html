@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DND Evreni - Arşiv</title>
+    <!-- Kendi klasöründeki style.css dosyasını çağırır -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="document-page">
+
+    <header class="site-header" style="background: var(--paper);">
+        <a href="../../index.html" class="brand">
+            <div class="brand-mark">&larr;</div>
+            <span>Ana Sayfaya Dön</span>
+        </a>
+    </header>
+
+    <main class="document-shell">
+        <article>
+            <h1>D&D Evrenleri</h1>
+            <p class="document-meta">Dreirün: V3.0.0 Alfa | Shélt: V2.0.0 Beta
+            </p>
+            <p class="document-meta"> D%D 5.5E Setleri destekleniyor: Dreirün, Shélt | D&D 5E setleri destekleniyor: Shélt 
+            </p>
+
+            <!-- EVRENLER BÖLÜMÜ -->
+            <h2>Evrenler</h2>
+            <p>Keşfetmek istediğiniz DND evrenini seçin:</p>
+            
+            <div class="card-grid" style="margin-top: 25px; display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px;">
+                <!-- Dreirün -->
+                <a href="Evrenler/Dreirun/index.html" class="archive-card adventure-card" style="padding: 0; overflow: hidden; text-decoration: none; border: 1px solid #c9b89e; display: flex; flex-direction: column;">
+                    <div style="width: 100%; height: 220px;">
+                        <img src="Dreirun.jpg" alt="Dreirün Evreni" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+                    </div>
+                    <div style="padding: 20px; background: #2c3b39; color: #f5ead6; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between;">
+                        <div>
+                            <span class="card-number">Durukan Oktay</span>
+                            <h3 style="margin: 10px 0 5px; font-family: var(--display);">Dreirün</h3>
+                        </div>
+                        <span class="card-link" style="margin-top: 15px; font-weight: 700;">Evrene Git &rarr;</span>
+                    </div>
+                </a>
+
+                <!-- Shelt -->
+                <a href="Shelt/index.html" class="archive-card state-card" style="padding: 0; overflow: hidden; text-decoration: none; border: 1px solid #c9b89e; display: flex; flex-direction: column;">
+                    <div style="width: 100%; height: 220px;">
+                        <img src="shelt.jpg" alt="Shelt Evreni" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+                    </div>
+                    <div style="padding: 20px; background: #e9ddc5; color: #201a16; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between;">
+                        <div>
+                            <span class="card-number">Emir Sinan Karcıoğlu</span>
+                            <h3 style="margin: 10px 0 5px; font-family: var(--display);">Shélt</h3>
+                        </div>
+                        <span class="card-link" style="margin-top: 15px; font-weight: 700;">Evrene Git &rarr;</span>
+                    </div>
+                </a>
+            </div>
+
+            <!-- KAYNAKLAR BÖLÜMÜ -->
+            <h2>Kaynaklar</h2>
+            <p>Kaynak Kitaplar:</p>
+            
+            <ul style="list-style-type: none; padding: 0; margin-top: 20px;">
+                <li style="margin-bottom: 12px; padding: 12px 16px; background: #f0e6d4; border: 1px solid #d5c5a9; display: flex; justify-content: space-between; align-items: center;">
+                    <span style="font-weight: 600;">📚 Monster Manual (Canavar El Kitabı)</span>
+                    <a href="monter_manual.pdf" target="_blank" style="color: var(--red); font-weight: 700; text-decoration: none;">PDF'i Aç / İndir &rarr;</a>
+                </li>
+                <li style="margin-bottom: 12px; padding: 12px 16px; background: #f0e6d4; border: 1px solid #d5c5a9; display: flex; justify-content: space-between; align-items: center;">
+                    <span style="font-weight: 600;">📖 Players Handbook (Oyuncu El Kitabı)</span>
+                    <a href="players_handbook.pdf" target="_blank" style="color: var(--red); font-weight: 700; text-decoration: none;">PDF'i Aç / İndir &rarr;</a>
+                </li>
+            </ul>
+
+        </article>
+    </main>
+
+    <footer class="site-footer">
+        <div>DND Arşiv Sistemi</div>
+        <div><a href="../../index.html" style="color: inherit; text-decoration: none;">Ana Dizine Dön</a></div>
+    </footer>
+
+</body>
+</html>
