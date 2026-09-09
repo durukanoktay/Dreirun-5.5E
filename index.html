@@ -3,8 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sistemler ve Evrenler Arşivi</title>
+    <title>Sistemler und Evrenler Arşivi</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        .header-audio-container {
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+        .audio-toggle-btn {
+            background: var(--red, #8f3429);
+            color: #fff;
+            border: none;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: grid;
+            place-items: center;
+            font-size: 16px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+            transition: background 0.2s;
+            z-index: 2;
+        }
+        .audio-toggle-btn:hover {
+            background: #a63d30;
+        }
+        .audio-dropdown {
+            position: absolute;
+            right: 0;
+            top: 45px;
+            background: var(--paper-deep, #e6d7bf);
+            border: 1px solid var(--gold, #b88642);
+            padding: 10px 14px;
+            border-radius: 8px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+            z-index: 1;
+        }
+        .audio-dropdown.active {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+        .audio-dropdown audio {
+            height: 32px;
+            width: 210px;
+        }
+    </style>
 </head>
 <body>
 
@@ -13,13 +65,72 @@
             <div class="brand-mark">S</div>
             <span>Arşiv</span>
         </a>
+
+        <!-- Header İçinde Açılır Kapanır Ses Barı -->
+        <div class="header-audio-container">
+            <button class="audio-toggle-btn" id="audioToggleBtn" title="Ses Kontrolü">🎵</button>
+            <div class="audio-dropdown" id="audioDropdown">
+                <!-- Tarayıcı engeline takılmamak için başta muted başlar, JS ile ses açılır -->
+                <audio controls loop id="bg-audio" muted>
+                    <source src="main_page.mp3" type="audio/mpeg">
+                    Tarayıcınız ses etiketini desteklemiyor.
+                </audio>
+            </div>
+        </div>
     </header>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const audio = document.getElementById("bg-audio");
+            const toggleBtn = document.getElementById("audioToggleBtn");
+            const dropdown = document.getElementById("audioDropdown");
+
+            audio.volume = 0.5;
+
+            // Tarayıcı kuralı gereği otomatik başlatma denemesi
+            audio.play().then(() => {
+                // Müzik oynamaya başladıktan hemen sonra kullanıcı ilk boşluğa/sayfaya tıkladığı an sesi açar
+                const unmuteAudio = () => {
+                    audio.muted = false;
+                    window.removeEventListener("click", unmuteAudio);
+                    window.removeEventListener("keydown", unmuteAudio);
+                };
+                window.addEventListener("click", unmuteAudio);
+                window.addEventListener("keydown", unmuteAudio);
+            }).catch(error => {
+                console.log("Otomatik oynatma engellendi, ilk etkileşim bekleniyor.");
+                const startAndUnmute = () => {
+                    audio.muted = false;
+                    audio.play();
+                    window.removeEventListener("click", startAndUnmute);
+                    window.removeEventListener("keydown", startAndUnmute);
+                };
+                window.addEventListener("click", startAndUnmute);
+                window.addEventListener("keydown", startAndUnmute);
+            });
+
+            // Butona tıklayınca açılır kapanır ses menüsü
+            toggleBtn.addEventListener("click", (e) => {
+                e.stopPropagation();
+                dropdown.classList.toggle("active");
+            });
+
+            // Menü dışına tıklandığında kapatma
+            document.addEventListener("click", (e) => {
+                if (!dropdown.contains(e.target) && !toggleBtn.contains(e.target)) {
+                    dropdown.classList.remove("active");
+                }
+            });
+        });
+    </script>
 
     <main class="archive">
         <div class="section-heading">
             <p class="eyebrow">Keşif Paneli</p>
             <h2>Sistemler</h2>
-            <p>Maceraya atılmak istediğin sistemi seçerek ilgili evren arşivine ve belgelerine ulaşabilirsin.</p>
+            <p>Oynatmak istediğin oyun türüne göre aşağıdan sistem seçimi yapabilirsin. Sistem ve evren seçimlerine göre kısa (one-shot) ve uzun (campaign) soluklu oyunlar oynatabilirsin</p>
+            <h3>Sistem seçimi</h3>
+            <p>Sistem, bir oyunun ve evren kurllarını, mekaniklerini ve fantastik öğelerini içerirken; Evrenler ise sisteme bağlı bir dünya yaratılmasıdır. Evrenler tamamen oyunculara bağlı kurallara ve hayal gücüne göre yazılmıştır. Sistemi aynı olan farklı evrenlerde oyun oynamak isterseniz bile aynı sistem kurlları ile oynayabilirsiniz.</p>
         </div>
 
         <!-- Görsel Kartlar Alanı -->

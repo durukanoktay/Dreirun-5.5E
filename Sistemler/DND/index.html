@@ -6,6 +6,58 @@
     <title>DND Evreni - Arşiv</title>
     <!-- Kendi klasöründeki style.css dosyasını çağırır -->
     <link rel="stylesheet" href="style.css">
+    <style>
+        .header-audio-container {
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+        .audio-toggle-btn {
+            background: var(--red, #8f3429);
+            color: #fff;
+            border: none;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: grid;
+            place-items: center;
+            font-size: 16px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+            transition: background 0.2s;
+            z-index: 2;
+        }
+        .audio-toggle-btn:hover {
+            background: #a63d30;
+        }
+        .audio-dropdown {
+            position: absolute;
+            right: 0;
+            top: 45px;
+            background: var(--paper-deep, #e6d7bf);
+            border: 1px solid var(--gold, #b88642);
+            padding: 10px 14px;
+            border-radius: 8px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+            z-index: 1;
+        }
+        .audio-dropdown.active {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+        .audio-dropdown audio {
+            height: 32px;
+            width: 210px;
+        }
+    </style>
 </head>
 <body class="document-page">
 
@@ -14,15 +66,65 @@
             <div class="brand-mark">&larr;</div>
             <span>Ana Sayfaya Dön</span>
         </a>
+
+        <!-- Header İçinde Açılır Kapanır Ses Barı -->
+        <div class="header-audio-container">
+            <button class="audio-toggle-btn" id="audioToggleBtn" title="Ses Kontrolü">🎵</button>
+            <div class="audio-dropdown" id="audioDropdown">
+                <!-- Tarayıcı kuralı gereği başta muted başlar, ilk etkileşimde ses açılır -->
+                <audio controls loop id="bg-audio" muted>
+                    <source src="main_page.mp3" type="audio/mpeg">
+                    Tarayıcınız ses etiketini desteklemiyor.
+                </audio>
+            </div>
+        </div>
     </header>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const audio = document.getElementById("bg-audio");
+            const toggleBtn = document.getElementById("audioToggleBtn");
+            const dropdown = document.getElementById("audioDropdown");
+
+            audio.volume = 0.5;
+
+            audio.play().then(() => {
+                const unmuteAudio = () => {
+                    audio.muted = false;
+                    window.removeEventListener("click", unmuteAudio);
+                    window.removeEventListener("keydown", unmuteAudio);
+                };
+                window.addEventListener("click", unmuteAudio);
+                window.addEventListener("keydown", unmuteAudio);
+            }).catch(() => {
+                const startAndUnmute = () => {
+                    audio.muted = false;
+                    audio.play();
+                    window.removeEventListener("click", startAndUnmute);
+                    window.removeEventListener("keydown", startAndUnmute);
+                };
+                window.addEventListener("click", startAndUnmute);
+                window.addEventListener("keydown", startAndUnmute);
+            });
+
+            toggleBtn.addEventListener("click", (e) => {
+                e.stopPropagation();
+                dropdown.classList.toggle("active");
+            });
+
+            document.addEventListener("click", (e) => {
+                if (!dropdown.contains(e.target) && !toggleBtn.contains(e.target)) {
+                    dropdown.classList.remove("active");
+                }
+            });
+        });
+    </script>
 
     <main class="document-shell">
         <article>
             <h1>D&D Evrenleri</h1>
-            <p class="document-meta">Dreirün: V3.0.0 Alfa | Shélt: V2.0.0 Beta
-            </p>
-            <p class="document-meta"> D%D 5.5E Setleri destekleniyor: Dreirün, Shélt | D&D 5E setleri destekleniyor: Shélt 
-            </p>
+            <p class="document-meta">Dreirün: V3.0.0 Alfa | Shélt: V2.0.0 Beta</p>
+            <p class="document-meta">D&D 5.5E Setleri destekleniyor: Dreirün, Shélt | D&D 5E setleri destekleniyor: Shélt</p>
 
             <!-- EVRENLER BÖLÜMÜ -->
             <h2>Evrenler</h2>

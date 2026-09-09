@@ -3,9 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DND Evreni - Arşiv</title>
-    <!-- Kendi klasöründeki style.css dosyasını çağırır -->
+    <title>Call of Cthulhu - Arşiv</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        .header-audio-container {
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+        .audio-toggle-btn {
+            background: var(--red, #8f3429);
+            color: #fff;
+            border: none;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: grid;
+            place-items: center;
+            font-size: 16px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+            transition: background 0.2s;
+            z-index: 2;
+        }
+        .audio-toggle-btn:hover {
+            background: #a63d30;
+        }
+        .audio-dropdown {
+            position: absolute;
+            right: 0;
+            top: 45px;
+            background: var(--paper-deep, #e6d7bf);
+            border: 1px solid var(--gold, #b88642);
+            padding: 10px 14px;
+            border-radius: 8px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+            z-index: 1;
+        }
+        .audio-dropdown.active {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+        .audio-dropdown audio {
+            height: 32px;
+            width: 210px;
+        }
+    </style>
 </head>
 <body class="document-page">
 
@@ -14,70 +65,103 @@
             <div class="brand-mark">&larr;</div>
             <span>Ana Sayfaya Dön</span>
         </a>
+
+        <!-- Header İçinde Açılır Kapanır Ses Barı -->
+        <div class="header-audio-container">
+            <button class="audio-toggle-btn" id="audioToggleBtn" title="Ses Kontrolü">🎵</button>
+            <div class="audio-dropdown" id="audioDropdown">
+                <!-- Tarayıcı kuralı gereği başta muted başlar, ilk etkileşimde ses açılır (Dosya aynı klasörde: main_page.mp3) -->
+                <audio controls loop id="bg-audio" muted>
+                    <source src="main_page.mp3" type="audio/mpeg">
+                    Tarayıcınız ses etiketini desteklemiyor.
+                </audio>
+            </div>
+        </div>
     </header>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const audio = document.getElementById("bg-audio");
+            const toggleBtn = document.getElementById("audioToggleBtn");
+            const dropdown = document.getElementById("audioDropdown");
+
+            audio.volume = 0.5;
+
+            audio.play().then(() => {
+                const unmuteAudio = () => {
+                    audio.muted = false;
+                    window.removeEventListener("click", unmuteAudio);
+                    window.removeEventListener("keydown", unmuteAudio);
+                };
+                window.addEventListener("click", unmuteAudio);
+                window.addEventListener("keydown", unmuteAudio);
+            }).catch(() => {
+                const startAndUnmute = () => {
+                    audio.muted = false;
+                    audio.play();
+                    window.removeEventListener("click", startAndUnmute);
+                    window.removeEventListener("keydown", startAndUnmute);
+                };
+                window.addEventListener("click", startAndUnmute);
+                window.addEventListener("keydown", startAndUnmute);
+            });
+
+            toggleBtn.addEventListener("click", (e) => {
+                e.stopPropagation();
+                dropdown.classList.toggle("active");
+            });
+
+            document.addEventListener("click", (e) => {
+                if (!dropdown.contains(e.target) && !toggleBtn.contains(e.target)) {
+                    dropdown.classList.remove("active");
+                }
+            });
+        });
+    </script>
 
     <main class="document-shell">
         <article>
-            <h1>D&D Evrenleri</h1>
-            <p class="document-meta">Dreirün: V3.0.0 Alfa | Shélt: V2.0.0 Beta
-            </p>
-            <p class="document-meta"> D%D 5.5E Setleri destekleniyor: Dreirün, Shélt | D&D 5E setleri destekleniyor: Shélt 
-            </p>
-
-            <!-- EVRENLER BÖLÜMÜ -->
-            <h2>Evrenler</h2>
-            <p>Keşfetmek istediğiniz DND evrenini seçin:</p>
+            <h1>Call of Cthulhu Evreni</h1>
+            <p class="document-meta">Kozmik Korku ve Gerilim</p>
+            
+            <h2>Kategoriler</h2>
+            <p>Oynamak veya incelemek istediğiniz senaryo türünü seçin:</p>
             
             <div class="card-grid" style="margin-top: 25px; display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px;">
-                <!-- Dreirün -->
-                <a href="Evrenler/Dreirun/index.html" class="archive-card adventure-card" style="padding: 0; overflow: hidden; text-decoration: none; border: 1px solid #c9b89e; display: flex; flex-direction: column;">
+                <!-- One-Shot -->
+                <a href="One_shot/index.html" class="archive-card magic-card" style="padding: 0; overflow: hidden; text-decoration: none; border: 1px solid #c9b89e; display: flex; flex-direction: column;">
                     <div style="width: 100%; height: 220px;">
-                        <img src="Dreirun.jpg" alt="Dreirün Evreni" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+                        <img src="one_shot.png" alt="One-Shot Senaryoları" style="width: 100%; height: 100%; object-fit: cover; display: block;">
                     </div>
-                    <div style="padding: 20px; background: #2c3b39; color: #f5ead6; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between;">
+                    <div style="padding: 20px; background: #2b2334; color: #f4e8d3; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between;">
                         <div>
-                            <span class="card-number">Durukan Oktay</span>
-                            <h3 style="margin: 10px 0 5px; font-family: var(--display);">Dreirün</h3>
+                            <span class="card-number"></span>
+                            <h3 style="margin: 10px 0 5px; font-family: var(--display);">One-Shot (Kısa Oturum)</h3>
                         </div>
-                        <span class="card-link" style="margin-top: 15px; font-weight: 700;">Evrene Git &rarr;</span>
+                        <span class="card-link" style="margin-top: 15px; font-weight: 700;">İncele &rarr;</span>
                     </div>
                 </a>
 
-                <!-- Shelt -->
-                <a href="Shelt/index.html" class="archive-card state-card" style="padding: 0; overflow: hidden; text-decoration: none; border: 1px solid #c9b89e; display: flex; flex-direction: column;">
+                <!-- Campaign -->
+                <a href="Campaign/index.html" class="archive-card state-card" style="padding: 0; overflow: hidden; text-decoration: none; border: 1px solid #c9b89e; display: flex; flex-direction: column;">
                     <div style="width: 100%; height: 220px;">
-                        <img src="shelt.jpg" alt="Shelt Evreni" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+                        <img src="campaign.png" alt="Campaign Senaryoları" style="width: 100%; height: 100%; object-fit: cover; display: block;">
                     </div>
                     <div style="padding: 20px; background: #e9ddc5; color: #201a16; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between;">
                         <div>
-                            <span class="card-number">Emir Sinan Karcıoğlu</span>
-                            <h3 style="margin: 10px 0 5px; font-family: var(--display);">Shélt</h3>
+                            <span class="card-number"></span>
+                            <h3 style="margin: 10px 0 5px; font-family: var(--display);">Campaign (Uzun Soluklu)</h3>
                         </div>
-                        <span class="card-link" style="margin-top: 15px; font-weight: 700;">Evrene Git &rarr;</span>
+                        <span class="card-link" style="margin-top: 15px; font-weight: 700;">İncele &rarr;</span>
                     </div>
                 </a>
             </div>
-
-            <!-- KAYNAKLAR BÖLÜMÜ -->
-            <h2>Kaynaklar</h2>
-            <p>Kaynak Kitaplar:</p>
-            
-            <ul style="list-style-type: none; padding: 0; margin-top: 20px;">
-                <li style="margin-bottom: 12px; padding: 12px 16px; background: #f0e6d4; border: 1px solid #d5c5a9; display: flex; justify-content: space-between; align-items: center;">
-                    <span style="font-weight: 600;">📚 Monster Manual (Canavar El Kitabı)</span>
-                    <a href="monter_manual.pdf" target="_blank" style="color: var(--red); font-weight: 700; text-decoration: none;">PDF'i Aç / İndir &rarr;</a>
-                </li>
-                <li style="margin-bottom: 12px; padding: 12px 16px; background: #f0e6d4; border: 1px solid #d5c5a9; display: flex; justify-content: space-between; align-items: center;">
-                    <span style="font-weight: 600;">📖 Players Handbook (Oyuncu El Kitabı)</span>
-                    <a href="players_handbook.pdf" target="_blank" style="color: var(--red); font-weight: 700; text-decoration: none;">PDF'i Aç / İndir &rarr;</a>
-                </li>
-            </ul>
 
         </article>
     </main>
 
     <footer class="site-footer">
-        <div>DND Arşiv Sistemi</div>
+        <div>Call of Cthulhu Arşiv Sistemi</div>
         <div><a href="../../index.html" style="color: inherit; text-decoration: none;">Ana Dizine Dön</a></div>
     </footer>
 
