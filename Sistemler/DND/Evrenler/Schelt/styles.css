@@ -1,0 +1,611 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Cinzel:wght@500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=UnifrakturMaguntia&display=swap');
+
+:root {
+  --abyss: #050709;
+  --catacomb: #0a0d11;
+  --iron: #14191f;
+  --blood: #881212;
+  --blood-glow: #e02424;
+  --blood-deep: #420808;
+  --gold-tarnished: #8c734b;
+  --gold-leaf: #c9a55c;
+  --ash: #8a8278;
+  --bone: #d5cbba;
+  
+  /* Evrensel değişken eşitlemeleri */
+  --ink: var(--bone);
+  --paper: var(--abyss);
+  --paper-deep: var(--catacomb);
+  --red: var(--blood);
+  --gold: var(--gold-leaf);
+  --night: var(--abyss);
+  --serif: 'Cormorant Garamond', Georgia, serif;
+  --display: 'Cinzel', Georgia, serif;
+  --font-gothic: 'UnifrakturMaguntia', cursive;
+  --font-display: 'Cinzel Decorative', Georgia, serif;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  color: var(--bone);
+  background: var(--abyss);
+  font: 20px/1.6 var(--serif);
+  min-height: 100vh;
+  overflow-x: hidden;
+  background-image: 
+    radial-gradient(ellipse at 50% 0%, rgba(136, 18, 18, 0.22) 0%, transparent 65%),
+    radial-gradient(circle at 100% 100%, rgba(140, 115, 75, 0.08) 0%, transparent 50%),
+    repeating-linear-gradient(45deg, rgba(0, 0, 0, 0.2) 0px, rgba(0, 0, 0, 0.2) 2px, transparent 2px, transparent 8px);
+  background-attachment: fixed;
+}
+
+/* Gotik dış çerçeve */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 8px;
+  border: 1px solid rgba(140, 115, 75, 0.3);
+  pointer-events: none;
+  z-index: 100;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 12px;
+  border: 1px dashed rgba(136, 18, 18, 0.3);
+  pointer-events: none;
+  z-index: 100;
+}
+
+a { color: inherit; text-decoration: none; }
+
+/* HEADER */
+.site-header {
+  min-height: 76px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 max(5vw, 28px);
+  border-bottom: 2px solid var(--blood-deep);
+  background: rgba(5, 7, 9, 0.95);
+  position: sticky;
+  z-index: 50;
+  top: 0;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 5px 25px rgba(0,0,0,0.9);
+}
+
+.brand {
+  font: 600 18px var(--display);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--gold-leaf);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand-mark {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border: 1px solid var(--gold-tarnished);
+  color: var(--blood-glow);
+  font-family: var(--font-gothic);
+  font-size: 22px;
+  background: #000;
+  box-shadow: inset 0 0 8px rgba(136, 18, 18, 0.6);
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+}
+
+.site-header nav {
+  display: flex;
+  gap: 28px;
+  font-family: var(--display);
+  font-size: 13px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.site-header nav a {
+  color: var(--bone);
+  transition: all 0.3s;
+}
+
+.site-header nav a:hover, .text-link:hover {
+  color: var(--blood-glow);
+  text-shadow: 0 0 10px rgba(224, 36, 36, 0.6);
+}
+
+/* HERO (ANA SAYFA İÇİN) */
+.hero {
+  min-height: 650px;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  overflow: hidden;
+  background: linear-gradient(135deg, var(--catacomb) 0%, #030406 100%);
+  border-bottom: 2px solid var(--blood-deep);
+  position: relative;
+}
+
+.hero-copy {
+  padding: clamp(70px, 9vw, 130px) clamp(28px, 6vw, 90px);
+  position: relative;
+  z-index: 2;
+}
+
+.eyebrow {
+  margin: 0 0 16px;
+  color: var(--gold-leaf);
+  font: 600 12px/1.3 var(--display);
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.eyebrow::before {
+  content: "✠";
+  color: var(--blood);
+  font-size: 14px;
+}
+
+.hero h1 {
+  font: 700 clamp(36px, 4.5vw, 60px)/1.15 var(--font-display);
+  margin: 0 0 24px;
+  color: #fff;
+  text-shadow: 0 4px 25px rgba(0, 0, 0, 0.9);
+}
+
+.hero h1 em {
+  font-family: var(--font-gothic);
+  font-style: normal;
+  font-size: 1.18em;
+  color: var(--blood-glow);
+  font-weight: 400;
+  text-shadow: 0 0 25px rgba(136, 18, 18, 0.85);
+  letter-spacing: 0.04em;
+}
+
+.lede {
+  max-width: 560px;
+  color: var(--ash);
+  font-size: 22px;
+  font-style: italic;
+  line-height: 1.55;
+  margin-bottom: 30px;
+}
+
+.button {
+  display: inline-flex;
+  gap: 15px;
+  align-items: center;
+  padding: 14px 26px;
+  background: var(--blood-deep);
+  border: 1px solid var(--blood);
+  color: var(--bone);
+  font-family: var(--display);
+  font-size: 13px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.7);
+  transition: all 0.3s;
+}
+
+.button:hover {
+  background: var(--blood);
+  color: #fff;
+  border-color: var(--blood-glow);
+  box-shadow: 0 0 20px rgba(224, 36, 36, 0.5);
+  transform: translateY(-2px);
+}
+
+.hero-art {
+  position: relative;
+  min-height: 420px;
+  overflow: hidden;
+  background: linear-gradient(180deg, #18090b 0%, #0c080b 60%, var(--abyss) 100%);
+  border-left: 1px solid rgba(140, 115, 75, 0.2);
+}
+
+.hero-art p {
+  position: absolute;
+  z-index: 3;
+  bottom: 24px;
+  right: 32px;
+  margin: 0;
+  font: 12px var(--display);
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--gold-leaf);
+  background: rgba(5, 7, 9, 0.85);
+  padding: 5px 12px;
+  border: 1px solid rgba(140, 115, 75, 0.3);
+}
+
+.moon {
+  position: absolute;
+  top: 15%;
+  right: 22%;
+  width: min(28vw, 290px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(circle, #e8d0a9 0%, #b88642 70%, #522718 100%);
+  box-shadow: 0 0 80px 25px rgba(184, 36, 36, 0.45);
+}
+
+.mountain { position: absolute; bottom: 0; width: 0; height: 0; border-style: solid; }
+.mountain-one { left: -20%; border-width: 0 30vw 42vw; border-color: transparent transparent #160d10; }
+.mountain-two { right: -22%; border-width: 0 34vw 46vw; border-color: transparent transparent #080608; }
+.mist {
+  position: absolute;
+  bottom: 12%;
+  left: -10%;
+  width: 120%;
+  height: 85px;
+  background: linear-gradient(90deg, transparent, rgba(136, 18, 18, 0.25), rgba(201, 165, 92, 0.15), transparent);
+  filter: blur(18px);
+  transform: rotate(-3deg);
+}
+
+/* ARŞİV KARTLARI */
+.archive { max-width: 1200px; margin: auto; padding: 90px 28px 100px; }
+.section-heading { max-width: 650px; margin-bottom: 45px; }
+.section-heading h2 {
+  font: 700 clamp(32px, 4vw, 48px)/1.15 var(--font-display);
+  color: #fff;
+  margin: 0 0 10px;
+}
+.section-heading > p:not(.eyebrow) { margin-top: 10px; color: var(--ash); font-size: 21px; font-style: italic; }
+
+.card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 24px; }
+.archive-card {
+  min-height: 310px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  background: var(--catacomb);
+  border: 1px solid rgba(140, 115, 75, 0.28);
+  position: relative;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+  transition: all 0.35s ease;
+  border-radius: 120px 120px 0 0;
+}
+
+.archive-card::before {
+  content: "";
+  position: absolute;
+  inset: 5px 5px 0 5px;
+  border: 1px solid rgba(140, 115, 75, 0.15);
+  border-radius: 115px 115px 0 0;
+  pointer-events: none;
+  transition: border-color 0.35s;
+}
+
+.archive-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--blood);
+  box-shadow: 0 15px 40px rgba(136, 18, 18, 0.35);
+}
+
+.archive-card:hover::before { border-color: rgba(224, 36, 36, 0.4); }
+.card-number {
+  font: 600 12px var(--display);
+  letter-spacing: 0.2em;
+  color: var(--gold-leaf);
+  text-align: center;
+  margin-top: 10px;
+}
+
+.archive-card h3 {
+  font: 600 24px var(--display);
+  margin: 22px 0 10px;
+  color: #fff;
+  text-align: center;
+  letter-spacing: 0.08em;
+  transition: color 0.3s;
+}
+
+.archive-card:hover h3 {
+  color: var(--blood-glow);
+  text-shadow: 0 0 15px rgba(224, 36, 36, 0.6);
+}
+
+.archive-card p { font-size: 17px; line-height: 1.5; color: var(--ash); margin: 0; text-align: center; }
+.card-link {
+  margin-top: auto;
+  padding-top: 22px;
+  font: 600 12px var(--display);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold-leaf);
+  border-top: 1px solid rgba(140, 115, 75, 0.2);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.archive-card:hover .card-link { color: var(--blood-glow); }
+
+/* ÖNE ÇIKAN MACERA BÖLÜMÜ */
+.featured {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  align-items: center;
+  padding: clamp(60px, 8vw, 100px) max(5vw, 28px);
+  background: var(--iron);
+  border-top: 2px solid var(--blood-deep);
+  border-bottom: 2px solid var(--blood-deep);
+}
+
+.featured > div { max-width: 520px; justify-self: end; }
+.featured h2 { font: 700 clamp(32px, 3.8vw, 48px)/1.15 var(--font-display); color: #fff; margin: 0 0 20px; }
+.featured p:not(.eyebrow) { color: var(--ash); font-size: 20px; line-height: 1.6; margin-bottom: 24px; }
+.featured img {
+  width: 100%;
+  max-height: 480px;
+  object-fit: cover;
+  display: block;
+  border: 1px solid var(--gold-tarnished);
+  box-shadow: 18px 18px 0 rgba(77, 10, 10, 0.65), 0 10px 30px rgba(0,0,0,0.9);
+  filter: grayscale(25%) contrast(115%);
+  transition: filter 0.4s ease;
+}
+.featured:hover img { filter: grayscale(0%) contrast(110%); }
+
+.text-link {
+  display: inline-block;
+  font: 600 13px var(--display);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-leaf);
+  border-bottom: 1px solid var(--blood);
+  padding-bottom: 4px;
+  transition: all 0.3s;
+}
+
+/* DOKÜMAN SAYFALARI (tanrilar.html, buyu.html, akcakale vb.) */
+.document-page {
+  background: var(--abyss);
+}
+
+.document-header {
+  background: transparent;
+}
+
+.document-shell {
+  max-width: 1050px;
+  margin: 0 auto;
+  padding: 60px 28px 100px;
+}
+
+.breadcrumbs {
+  margin: 0 0 25px;
+  font-family: var(--display);
+  font-size: 13px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--gold-leaf);
+}
+
+.breadcrumbs a {
+  color: var(--ash);
+  transition: color 0.2s;
+}
+
+.breadcrumbs a:hover {
+  color: var(--blood-glow);
+}
+
+.document-shell article {
+  background: var(--catacomb);
+  padding: clamp(28px, 6vw, 75px);
+  border: 1px solid rgba(140, 115, 75, 0.25);
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.95);
+  position: relative;
+}
+
+.document-shell article::before {
+  content: "";
+  position: absolute;
+  inset: 6px;
+  border: 1px solid rgba(140, 115, 75, 0.12);
+  pointer-events: none;
+}
+
+.document-meta {
+  font-family: var(--display);
+  font-size: 13px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-leaf);
+  margin-top: 0;
+  margin-bottom: 30px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.document-meta::before {
+  content: "✠";
+  color: var(--blood);
+}
+
+.document-shell h1 {
+  font: 700 clamp(32px, 5vw, 54px)/1.2 var(--font-display);
+  color: #fff;
+  margin: 0 0 25px;
+  text-shadow: 0 3px 15px rgba(0,0,0,0.8);
+}
+
+.document-shell h2 {
+  font: 600 28px/1.3 var(--display);
+  color: var(--bone);
+  margin-top: 2.2em;
+  padding-top: .5em;
+  border-top: 1px solid rgba(140, 115, 75, 0.3);
+  letter-spacing: 0.05em;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.document-shell h2::before {
+  content: "†";
+  color: var(--blood-glow);
+  font-size: 20px;
+}
+
+.document-shell h3 {
+  font: 600 22px/1.35 var(--display);
+  color: var(--gold-leaf);
+  margin-top: 1.8em;
+  letter-spacing: 0.04em;
+}
+
+.document-shell p {
+  color: var(--ash);
+  font-size: 21px;
+}
+
+.document-shell strong {
+  color: #fff;
+  font-weight: 600;
+}
+
+.document-shell img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 30px auto;
+  border: 1px solid var(--gold-tarnished);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.9);
+  filter: grayscale(15%) contrast(110%);
+}
+
+/* GOTİK TABLOLAR (Tanrılar ve Stat Tabloları) */
+.document-shell table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 18px;
+  margin: 30px 0;
+  background: rgba(5, 7, 9, 0.85);
+  border: 1px solid rgba(140, 115, 75, 0.3);
+}
+
+.document-shell th, .document-shell td {
+  border: 1px solid rgba(140, 115, 75, 0.2);
+  padding: 12px 16px;
+  text-align: left;
+  vertical-align: top;
+}
+
+.document-shell th {
+  background: var(--iron);
+  color: var(--gold-leaf);
+  font-family: var(--display);
+  font-size: 14px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  border-bottom: 2px solid var(--blood);
+}
+
+.document-shell td {
+  color: var(--bone);
+}
+
+.document-shell tbody tr:hover {
+  background: rgba(136, 18, 18, 0.1);
+}
+
+/* ALINTILAR & NOTLAR */
+.document-shell blockquote {
+  margin: 30px 0;
+  padding: 16px 24px;
+  border-left: 3px solid var(--blood);
+  background: rgba(20, 25, 31, 0.9);
+  box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.6);
+  font-style: italic;
+  color: var(--bone);
+}
+
+.document-shell hr {
+  border: 0;
+  border-top: 1px solid rgba(140, 115, 75, 0.25);
+  margin: 45px 0;
+}
+
+.document-shell li {
+  margin: .5em 0;
+  color: var(--ash);
+}
+
+.related-links {
+  margin-top: 50px;
+  padding: 24px 28px;
+  background: var(--iron);
+  border-left: 4px solid var(--blood);
+  border-top: 1px solid rgba(140, 115, 75, 0.2);
+  border-bottom: 1px solid rgba(140, 115, 75, 0.2);
+}
+
+.related-links h2 {
+  border: 0 !important;
+  margin: 0 0 12px !important;
+  padding: 0 !important;
+  font-size: 18px !important;
+  color: var(--gold-leaf) !important;
+}
+
+.related-links h2::before { display: none; }
+.related-links ul { margin: 0; padding-left: 20px; }
+.related-links a { color: var(--blood-glow); font-weight: 600; }
+
+/* FOOTER */
+.site-footer {
+  padding: 30px max(5vw, 28px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  background: #020305;
+  color: var(--ash);
+  font-family: var(--display);
+  font-size: 12px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  border-top: 1px solid rgba(140, 115, 75, 0.25);
+}
+
+.site-footer a {
+  color: var(--gold-leaf);
+  transition: color 0.2s;
+}
+
+.site-footer a:hover {
+  color: var(--blood-glow);
+}
+
+/* RESPONSIVE */
+@media (max-width: 860px) {
+  .hero, .featured { grid-template-columns: 1fr; }
+  .featured > div { justify-self: start; }
+  .featured img { order: -1; }
+  .card-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 680px) {
+  .site-header { position: static; flex-direction: column; gap: 15px; padding: 18px 20px; }
+  .card-grid { grid-template-columns: 1fr; }
+  .document-shell { padding: 30px 14px 60px; }
+  .document-shell article { padding: 25px 18px; }
+  .site-footer { flex-direction: column; text-align: center; }
+  .document-shell table { display: block; overflow-x: auto; white-space: nowrap; }
+}
